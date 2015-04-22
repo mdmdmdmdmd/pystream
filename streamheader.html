@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="lbjs/flowplayer-3.2.13.min.js"></script>
+    <script>
+        flowplayer.conf = {
+           ratio: 9/21,
+           splash: true
+        };
+    </script>
+</head>
+<body>
+<div id="player" style="display:block;width:960px;height:540px;"></div>
+<div id="info" class="info">
+    You have Flash version 10.1 or above. Enjoy Flowplayer!
+</div>
+<script>
+      flowplayer("player", {
+
+          // our Flash component
+          src: "lbjs/flowplayer-3.2.18.swf",
+
+          // Flowplayer requires at least this version
+          version: [10, 1],
+
+          // older versions will see a custom message
+          onFail: function ()  {
+              document.getElementById("info").innerHTML =
+                  "You need at least Flash version 10.1 to play the movie. " +
+                  "Your version is " + this.getVersion();
+          }
+      },
+      // here is our third argument which is the Flowplayer configuration
+      {
+          clip: {
+            url: "
