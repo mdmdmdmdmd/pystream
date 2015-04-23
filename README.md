@@ -12,3 +12,5 @@ TODO:
 - make it more flexible so you dont have to have a specific directory layout
 - handle some more errors that currently are still unchecked
 - comment the source
+- perhaps some kind of authentication?
+- a client plugin for kodi
