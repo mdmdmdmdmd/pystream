@@ -1,9 +1,18 @@
 class CfgOptions():
-    pathname = 'z:\\'
-    vlc = 'd:\\apps\\vlc\\vlc.exe'
-    preset_360p = '#transcode{vcodec=h264,venc=x264{keyint=250,preset=medium,tune=film,level=41,profile=high,vbv-maxrate=500,vbv-bufsize=200,bitrate=500,nr=9000},vb=9000,scale=0.33,acodec=mp4a,channels=2,ab=128,threads=16}:duplicate{dst=std{access=file,mux=ffmpeg{mux=flv},dst=-}}'
-    preset_540p = '#transcode{vcodec=h264,venc=x264{keyint=250,preset=medium,tune=film,level=41,profile=high,vbv-maxrate=1200,vbv-bufsize=600,bitrate=1200,nr=1000},vb=9000,scale=0.5,acodec=mp4a,channels=2,ab=128,threads=16}:duplicate{dst=std{access=file,mux=ffmpeg{mux=flv},dst=-}}'
-    preset_720p = '#transcode{vcodec=h264,venc=x264{keyint=250,preset=fast,tune=film,level=41,profile=high,vbv-maxrate=1500,vbv-bufsize=700,bitrate=1500,nr=100},vb=9000,scale=0.67,acodec=mp4a,channels=2,ab=192,threads=16}:duplicate{dst=std{access=file,mux=ffmpeg{mux=flv},dst=-}}'
-    preset_1080p = '#transcode{vcodec=h264,venc=x264{keyint=250,preset=faster,tune=film,level=41,profile=high,vbv-maxrate=2500,vbv-bufsize=1200,bitrate=2500,nr=100},vb=9000,acodec=mp4a,channels=2,ab=256,threads=16}:duplicate{dst=std{access=file,mux=ffmpeg{mux=flv},dst=-}}'
+    pathname = 'z:/'
+    ffmpeg = 'd:/apps/FFMPEG/bin/ffmpeg.exe'
+    extract = 'UnRAR.exe p -inul'
+    host = '192.168.10.40'
+    port = 9999
+    preset_low = '-c:v libx264 -crf 19 -preset medium -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 500k -minrate 100k -maxrate 500k -bufsize 250k -vf scale=640:-2 -c:a libopus -ac 2 -b:a 80k -f matroska -y pipe:'
+    preset_high = '-c:v libx264 -crf 19 -preset medium -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 1500k -minrate 100k -maxrate 1500k -bufsize 750k -vf scale=1280:-2 -c:a libopus -ac 2 -b:a 96k -f matroska -y pipe:'
+    preset_low_1080p = '-c:v libx264 -crf 19 -preset medium -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 500k -minrate 100k -maxrate 500k -bufsize 250k -vf scale=640:-2 -c:a libopus -ac 2 -b:a 80k -f matroska -y pipe:'
+    preset_high_1080p = '-c:v libx264 -crf 19 -preset medium -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 1500k -minrate 100k -maxrate 1500k -bufsize 750k -vf scale=1280:-2 -c:a libopus -ac 2 -b:a 96k -f matroska -y pipe:'
+    preset_low_720p = '-c:v libx264 -crf 19 -preset medium -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 500k -minrate 100k -maxrate 500k -bufsize 250k -vf scale=640:-2 -c:a libopus -ac 2 -b:a 80k -f matroska -y pipe:'
+    preset_high_720p = '-c:v libx264 -crf 19 -preset medium -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 1500k -minrate 100k -maxrate 1500k -bufsize 750k -c:a libopus -ac 2 -b:a 96k -f matroska -y pipe:'
+    preset_low_dvd = '-c:v libx264 -crf 19 -preset medium -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 500k -minrate 100k -maxrate 500k -bufsize 250k -vf scale=320:-2 -c:a libopus -ac 2 -b:a 80k -f matroska -y pipe:'
+    preset_high_dvd = '-c:v libx264 -crf 19 -preset medium -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 1500k -minrate 100k -maxrate 1500k -bufsize 750k -c:a libopus -ac 2 -b:a 96k -f matroska -y pipe:'
+    preset_best = '-c:v libx264 -crf 19 -preset faster -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 3500k -minrate 100k -maxrate 3500k -bufsize 1750k -c:a libopus -ac 2 -b:a 128k -f matroska -y pipe:'
+    preset_best_surround = '-c:v libx264 -crf 19 -preset faster -tune film -profile:v high -level 4.1 -x264opts keyint=250:nr=90 -b:v 3500k -minrate 100k -maxrate 3500k -bufsize 1750k -c:a libopus -b:a 256k -f matroska -y pipe:'
 
 cfgoptions = CfgOptions()
