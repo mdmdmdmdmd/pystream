@@ -7,10 +7,10 @@ only tested in python 3.4.2!
 
 TODO:
 - make this work with html5 players (the vlc backend is not capable of producing valid streams for this yet it seems)
-- make it platform agnostic (currently has some windows-isms like \ instead of /)
-- make binding to host and port a config option
+- make it platform agnostic (currently has some windows-isms like \ instead of /) DONE
+- make binding to host and port a config option DONE
 - make it more flexible so you dont have to have a specific directory layout
 - handle some more errors that currently are still unchecked
 - comment the source
 - perhaps some kind of authentication?
-- a client plugin for kodi
+- a client plugin for kodi DONE
